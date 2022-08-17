@@ -1,0 +1,29 @@
+function maxProfit(prices: number[]): number {
+    if(prices.length === 0){
+      return 0;
+    }
+    
+    //time complexity => O(n)
+    //space complexity => O(1)
+    let leftIndex=0;
+    let rightIndex=1;
+    let minBuy=0
+    let maxSell=0
+    let profit=0
+    let maxProfit=0;
+    while(rightIndex <= prices.length-1){ 
+        if(prices[leftIndex] < prices[rightIndex]){
+            minBuy = prices[leftIndex];
+            maxSell = prices[rightIndex];
+            profit= maxSell- minBuy;
+            maxProfit = Math.max(maxProfit,profit);
+        }
+    
+        else{
+            leftIndex=rightIndex;
+        }
+
+        rightIndex++
+    }    
+    return maxProfit;
+};
