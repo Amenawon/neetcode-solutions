@@ -1,0 +1,24 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target) {//time complexity=>O(N)
+    //space complexity=>O(N)
+    //Loop over the array 
+    //subtract the target from the current index to find out if the second num sums up
+  //store the nums in a map and check against it
+     let numMap=new Map();
+    let result=[];
+    for (let i=0;i<=nums.length;i++){
+        numMap.set(nums[i],i);
+    }
+    for(let i=0;i<=nums.length;i++){
+        const currentNum = nums[i];
+        const secondNum = target-currentNum
+        if(numMap.has(secondNum) &&  numMap.get(secondNum)!=i){ 
+            result= [i,numMap.get(secondNum)] 
+        }
+    }
+    return result;
+};
