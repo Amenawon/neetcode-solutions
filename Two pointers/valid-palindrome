@@ -1,0 +1,21 @@
+function isPalindrome(s: string): boolean {
+    s=s.trim();//Time complexity =>O(n)+O(n), Space complexity = O(1)
+    if(s === ""){
+        return true;
+    }
+    s= s.toLowerCase();
+    s= s.replace(/[^a-zA-Z0-9]/g, '');
+    let rightIndex=s.length-1;
+    let leftIndex = 0;
+
+    while(leftIndex < rightIndex){ 
+        const leftValue=s[leftIndex];  
+        const rightValue=s[rightIndex]; 
+        if(leftValue != rightValue){
+            return false;
+        }
+        leftIndex ++;
+        rightIndex --;
+    }
+   return true; 
+};
