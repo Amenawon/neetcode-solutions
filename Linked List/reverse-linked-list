@@ -1,0 +1,29 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function reverseList(head: ListNode | null): ListNode | null { 
+    let current = head;
+    let previous = null;
+    let next = null;
+    
+    while (current !=null){
+        next = current.next;//1 
+        current.next=previous//null
+        previous=current;//0
+        current = next;
+        console.log(current)
+        //0->1->2->3->4->5->null
+         //0->null->2->3->4->5->null 
+        
+    }
+    return previous;
+};
