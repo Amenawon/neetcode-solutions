@@ -1,0 +1,21 @@
+function isPalindrome(x: number): boolean {
+if(x<0){
+    return false;
+}
+    let value = x.toString();
+    
+    let rightIndex = value.length - 1;
+    let leftIndex= 0;
+    
+    while(leftIndex <= rightIndex){
+        const leftValue= value[leftIndex];
+        const rightValue= value[rightIndex];
+              
+        if(leftValue != rightValue){
+            return false;
+        }
+        rightIndex--;
+        leftIndex++;
+    }
+    return true
+};
