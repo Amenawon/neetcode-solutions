@@ -1,0 +1,33 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+function maxDepth(root: TreeNode | null): number {
+if(root == null) return 0;
+    let maxCount=0;
+    let leftNodeCount,rightNodeCount;
+    
+     console.log(root.left,'leftNode') 
+     leftNodeCount=maxDepth(root.left)//9
+     rightNodeCount=maxDepth(root.right)//
+    
+    
+    console.log(leftNodeCount,'leftNodeCount')
+    maxCount= Math.max(leftNodeCount,rightNodeCount) + 1   
+    console.log(maxCount,'maxCount')
+    return maxCount;
+};
+
+//check the root is null and return the root(base case)
+//check the length of the right node and left node and find the max between the two + the root node(1)
+//the max 
